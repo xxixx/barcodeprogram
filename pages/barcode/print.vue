@@ -23,12 +23,12 @@
                 <div class="d-flex justify-content-between text-center barcode-headname">
                     <div>ALKOSC</div>
                     <div class="middle-div"></div>
-                    <div>PAB</div>
+                    <div>PA6.6/Si</div>
                 </div>
                 <div class="d-flex justify-content-between center-div">
                     <div class="d-flex flex-column"><span class="top-gap"></span><span>VINFAST</span><span>{{ carName }}</span></div>
                     <div class="qr-code"><qrcode-vue class="mx-2" :value="barcode" :size="22" level="H" />     </div>
-                    <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">US&nbsp;PAB</span><span class="small-font">US</span></div>
+                    <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">&nbsp;PAB</span><span class="small-font">US</span></div>
                 </div>
                 <div  ><span class="barcode-name" >{{ barcode }}</span></div>
               </div>

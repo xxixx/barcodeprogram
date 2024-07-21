@@ -35,10 +35,13 @@
             <div class="ms-4  d-lg-block vh-100" :style="{ display: isMenuOpen ? 'none' : 'block' }" >
               <ul class="nav nav-tabs flex-column" style="color: var(--bs-body-bg);">
                 <li class="nav-item">
+                  <NuxtLink v-slot="{ navigate }" custom to="/production">
+                            <a class="nav-link" href="/barcode/createBarcode" style="color: var(--bs-body-bg);">바코드  출력+ </a>
+                          </NuxtLink>
                           <!-- <NuxtLink v-slot="{ navigate }" custom to="/defective">
                             <a class="nav-link" href="/workOrder/create" style="color: var(--bs-body-bg);">작업등록</a>
                           </NuxtLink> -->
-                          <NuxtLink v-slot="{ navigate }" custom to="/wondan">
+                          <!-- <NuxtLink v-slot="{ navigate }" custom to="/wondan">
                             <a class="nav-link" href="/wondan/wondanRegister" style="color: var(--bs-body-bg);">원단등록 +</a>
                           </NuxtLink>
                           <NuxtLink v-slot="{ navigate }" custom to="/wondan">
@@ -66,6 +69,7 @@
                           <NuxtLink v-slot="{ navigate }" custom to="/production">
                             <a class="nav-link" href="/production/barcode" style="color: var(--bs-body-bg);">생산 바코드+ </a>
                           </NuxtLink>
+                          
                           <NuxtLink v-slot="{ navigate }" custom to="/production">
                             <a class="nav-link" href="/production/barcodeRegister" style="color: var(--bs-body-bg);">생산 바코드 등록+ </a>
                           </NuxtLink>
@@ -84,7 +88,7 @@
                           </NuxtLink>
                           <NuxtLink v-slot="{ navigate }" custom to="/defective/create">
                             <a class="nav-link" href="/defective/create" style="color: var(--bs-body-bg);">불량 등록 + </a>
-                          </NuxtLink>
+                          </NuxtLink> -->
                 </li>
               </ul>
             </div>

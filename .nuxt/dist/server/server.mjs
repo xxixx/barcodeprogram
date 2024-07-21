@@ -1,0 +1,1 @@
+export { default } from "file:///C:/%EC%83%88%20%ED%8F%B4%EB%8D%94/barcoderenew-master/barcoderenew-master/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

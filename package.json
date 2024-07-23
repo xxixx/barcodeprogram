@@ -29,6 +29,7 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "prettier": "^3.2.5",
+    "qrcode": "^1.5.3",
     "qrcode.vue": "^3.4.1",
     "sass": "^1.77.1",
     "typescript": "^5.3.3",

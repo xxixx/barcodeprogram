@@ -91,7 +91,8 @@ const route = useRoute();
 const router = useRouter();
 // const processCode = ref(route.query.processCode || "");
 
-const productsCode = ref('KAAL230000K');
+const productsCode = ref('KADL230220K');
+// const productsCode = ref('KAAL230230K');
 
 const barcodeDate = ref("QG181");
 const barcodeData = ref("");
@@ -139,7 +140,7 @@ const generateBarcodes = async () => {
 
       
       router.push({
-        path: "/barcode/print",
+        path: "/barcode/qrprint",
         query: {
           barcodes: barcodes.value.join(","), // 기존 barcodes 데이터
           barcodeData: barcodeData.value.PRODUCT_BARCODE, // 추가된 barcodeData 데이터

@@ -27,8 +27,11 @@
                 </div>
                 <div class="d-flex justify-content-between center-div">
                     <div class="d-flex flex-column"><span class="top-gap"></span><span>VINFAST</span><span>{{ carName }}</span></div>
-                    <div class="qr-code"><qrcode-vue class="mx-2" :value="barcode" :size="23" level="H" />     </div>
-                    <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">&nbsp;CAB</span><span class="small-font">VN/EU</span></div>
+                    <div class="qr-code">
+                    <!-- <qrcode-vue class="mx-2" :value="barcode" :size="23" level="H" />  -->
+                    <canvas :ref="'canvas-' + index"></canvas>
+                        </div>
+                    <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">&nbsp;PAB</span><span class="small-font">US</span></div>
                 </div>
                 <div  ><span class="barcode-name" >{{ barcode }}</span></div>
               </div>
@@ -43,17 +46,23 @@
 import { ref } from "vue";
 import QrcodeVue from "qrcode.vue";
 import { useRoute } from "vue-router";
+import QRCode from 'qrcode';
 
 const route = useRoute();
 const barcodes = ref(
   route.query.barcodes ? route.query.barcodes.split(",") : [],
-);  1
+);  
 const barcodeData = ref(route.query.barcodeData);
 const lastSerialNumber = ref(route.query.lastSerialNumber);
 const productName = ref(route.query.productName);
 const location = ref(route.query.location);
 const carName = ref(route.query.carName);
 
+const generateQRCode = (text, canvas) => {
+      QRCode.toCanvas(canvas, text, { width: 20 }, (error) => {
+        if (error) console.error(error);
+      });
+    };
 const printBarcodes = async () => {
   await fetch(`/api/products/${barcodeData.value}`, {
     method: "PUT",
@@ -64,6 +73,12 @@ const printBarcodes = async () => {
   });
   window.print();
 };
+onMounted(() => {
+  const canvas = document.querySelector(`#canvas-${index}`);
+        if (canvas) {
+          generateQRCode(barcode, canvas);
+        }
+    });
 </script>
 
 <style>
@@ -86,7 +101,7 @@ const printBarcodes = async () => {
  .barcode-position{
    position: relative;
    left: -33px;
-   top: -10px;
+   top: -8px;
    font-style: bold;
    margin-top: -3px;
    /* margin-top: -10px; */
@@ -95,7 +110,7 @@ const printBarcodes = async () => {
    font-weight: 600;
    text-align: center;
    /* margin-bottom: 26.5px; */
-   margin-bottom: 56px;
+   margin-bottom: 58.5px;
 
  }
  .center-div{

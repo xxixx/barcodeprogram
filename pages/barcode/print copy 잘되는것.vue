@@ -27,7 +27,7 @@
                 </div>
                 <div class="d-flex justify-content-between center-div">
                     <div class="d-flex flex-column"><span class="top-gap"></span><span>VINFAST</span><span>{{ carName }}</span></div>
-                    <div class="qr-code"><qrcode-vue class="mx-2" :value="barcode" :size="23" level="H" />     </div>
+                    <div class="qr-code"><qrcode-vue class="mx-2" :value="barcode" :size="22" level="H" />     </div>
                     <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">&nbsp;CAB</span><span class="small-font">VN/EU</span></div>
                 </div>
                 <div  ><span class="barcode-name" >{{ barcode }}</span></div>
@@ -86,7 +86,7 @@ const printBarcodes = async () => {
  .barcode-position{
    position: relative;
    left: -33px;
-   top: -10px;
+   top: -8px;
    font-style: bold;
    margin-top: -3px;
    /* margin-top: -10px; */
@@ -95,7 +95,7 @@ const printBarcodes = async () => {
    font-weight: 600;
    text-align: center;
    /* margin-bottom: 26.5px; */
-   margin-bottom: 56px;
+   margin-bottom: 58.5px;
 
  }
  .center-div{

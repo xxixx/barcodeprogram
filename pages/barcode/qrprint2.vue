@@ -27,7 +27,10 @@
                 </div>
                 <div class="d-flex justify-content-between center-div">
                     <div class="d-flex flex-column"><span class="top-gap"></span><span>VINFAST</span><span>{{ carName }}</span></div>
-                    <div class="qr-code"><qrcode-vue class="mx-2" :value="barcode" :size="23" level="H" />     </div>
+                    <div class="qr-code">
+                      <qrcode-vue class="mx-2" :value="barcode" :size="25" level="H" />
+                      <!-- <img :src="qrCodeData" alt="QR Code" style="height: 40px;"> -->
+                      </div>
                     <div class="d-flex flex-column"><span class="top-gap"></span><span class="middle-font">&nbsp;CAB</span><span class="small-font">VN/EU</span></div>
                 </div>
                 <div  ><span class="barcode-name" >{{ barcode }}</span></div>
@@ -43,8 +46,12 @@
 import { ref } from "vue";
 import QrcodeVue from "qrcode.vue";
 import { useRoute } from "vue-router";
-
+import QRCode from 'qrcode'
+    
 const route = useRoute();
+const qrCodeData = ref( 
+    route.query.barcodes ? route.query.barcodes.split(",") : [],);
+    
 const barcodes = ref(
   route.query.barcodes ? route.query.barcodes.split(",") : [],
 );  1
@@ -64,6 +71,17 @@ const printBarcodes = async () => {
   });
   window.print();
 };
+const generateQRCode = async () => {
+    try {
+    const qrData = barcodeData.value// Add your data here
+    qrCodeData.value = await QRCode.toDataURL(qrData)
+     } catch (error) {
+    console.error('Error generating QR code:', error)
+     }
+    }
+  onMounted(async () => {
+    generateQRCode()
+    })
 </script>
 
 <style>

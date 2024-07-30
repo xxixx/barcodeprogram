@@ -11,11 +11,24 @@ export type ProductsModel = {
   
 };
 
+// export const getProductsByProductCode = async (productsCode: string) => {
+//   const result = await sql({
+//     // query: `SELECT * FROM PRODUCTION WHERE PROCESS_CODE = ?`,
+//     query: `SELECT  pr.*, pc.LAST_SERIAL_NUMBER as LAST_SERIAL_NUMBER2 FROM PRODUCTS pr
+// JOIN PRODUCTS_BARCODE_COUNT pc ON pr.PRODUCT_CODE = pc.PRODUCT_CODE
+// WHERE pr.PRODUCT_CODE = ?`,
+//     values: [productsCode]
+//   });
+
+//   console.log('productsCode', productsCode);
+
+//   return result[0] as ProductsModel | undefined;
+// };
 export const getProductsByProductCode = async (productsCode: string) => {
   const result = await sql({
     // query: `SELECT * FROM PRODUCTION WHERE PROCESS_CODE = ?`,
     query: `SELECT  pr.*, pc.LAST_SERIAL_NUMBER as LAST_SERIAL_NUMBER2 FROM PRODUCTS pr
-JOIN PRODUCTS_BARCODE_COUNT pc ON pr.PRODUCT_CODE = pc.PRODUCT_CODE
+JOIN PRODUCTS_BARCODE_COUNT pc ON pr.NO = pc.PRODUCT_CODE
 WHERE pr.PRODUCT_CODE = ?`,
     values: [productsCode]
   });

@@ -12,15 +12,14 @@
       <div class="d-flex flex-column  barcode-position ">
         <div class="barcode-container  barcode-item border mb-5 me-2" v-for="(barcode, index) in barcodes" :key="index">
           <div class="d-flex flex-column  " style="text-align: center;">
-            <!-- <div class="d-flex justify-content-between text-center barcode-headname ">
+            <div class="d-flex justify-content-between text-center barcode-headname ">
               <div>ALKOSC</div>
               <div class="middle-div"></div>
               <div>PA6.6/Si</div>
-            </div> -->
+            </div>
             <div class="d-flex justify-content-center center-div">
               <div class="d-flex flex-column">
-                <!-- <span class="top-gap"></span> -->
-                <span class="">ALKOSC</span>
+                <span class="top-gap"></span>
                 <span>VINFAST</span>
                 <span>{{ carName }}</span>
               </div>
@@ -28,8 +27,7 @@
                 <img :src="qrCodeData[index]" alt="QR Code" style="height: 30px;" />
               </div>
               <div class="d-flex flex-column">
-                <!-- <span class="top-gap"></span> -->
-                <span class="">PA6.6/Si</span>
+                <span class="top-gap"></span>
                 <span class="middle-font">&nbsp;PAB</span>
                 <span class="middle-font">US</span>
               </div>
@@ -109,7 +107,7 @@ onMounted(async () => {
     top: 3px;
     font-style: bold;
     margin-top: 0px;
-    font-size: 5px;
+    font-size: 6px;
     max-width: 170px;
     font-weight: 600;
     text-align: center;
@@ -124,8 +122,6 @@ onMounted(async () => {
       left: 8px; */  
    }
    .barcode-headname {
-    font-size: 6px;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -140,7 +136,7 @@ onMounted(async () => {
   }
   .center-div {
     margin-top: 4px;
-    margin-bottom:-10;
+    margin-bottom: 0;
     padding: 0;
     width: 170px;
   }

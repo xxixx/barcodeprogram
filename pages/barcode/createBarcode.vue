@@ -91,10 +91,11 @@ const route = useRoute();
 const router = useRouter();
 // const processCode = ref(route.query.processCode || "");
 
-const productsCode = ref('KADL230220K');
+// const productsCode = ref('KADL230220K');
+const productsCode = ref('KABL230000K');
 // const productsCode = ref('KAAL230230K');
 
-const barcodeDate = ref("QG181");
+const barcodeDate = ref("240729");
 const barcodeData = ref("");
 const quantity = ref(0);
 const barcodes = ref([]);
@@ -128,6 +129,7 @@ const generateBarcodes = async () => {
       lastSerialNumber.value = barcodeData.value.LAST_SERIAL_NUMBER2 || 0;
       console.log("lastSerialNumber", lastSerialNumber.value);
       const startNumber = lastSerialNumber.value + 1;
+      
       const endNumber = startNumber + quantity.value - 1;
       console.log("startNumber", startNumber);
       console.log("endNumber", endNumber);

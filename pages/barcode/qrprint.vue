@@ -20,16 +20,16 @@
             <div class="d-flex justify-content-center center-div">
               <div class="d-flex flex-column">
                 <!-- <span class="top-gap"></span> -->
-                <span class="">ALKOSC</span>
-                <span>VINFAST</span>
-                <span>{{ carName }}</span>
+                <span class="middle-font">ALKOSC</span>
+                <span class="middle-font">VINFAST</span>
+                <span class="middle-font">{{ carName }}</span>
               </div>
               <div class="qr-code">
                 <img :src="qrCodeData[index]" alt="QR Code" style="height: 30px;" />
               </div>
               <div class="d-flex flex-column">
                 <!-- <span class="top-gap"></span> -->
-                <span class="">PA6.6/Si</span>
+                <span class="middle-font">PA6.6/Si</span>
                 <span class="middle-font">&nbsp;PAB</span>
                 <span class="middle-font">US</span>
               </div>
@@ -105,19 +105,25 @@ onMounted(async () => {
   }
   .barcode-position {
     position: relative;
-    right:  52px;
-    top: 3px;
+    right:  40px;
+    top: 8px;
     font-style: bold;
     margin-top: 0px;
     font-size: 5px;
     max-width: 170px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 90px;
+    border-top: 1px solid black;
+    /* margin-bottom: 80px; */
     /* margin-bottom: 58.5px; */
   }
   .barcode-name {
-    margin-left: 20px;
+    text-align: center;
+    margin-right: 3px;
+    /* font-size: 5px; */
+    font-style: bold;
+    font-weight: 700  ;
+    /* margin-left: 10px; */
     /* margin-right: 10px; */
       /* position: relative;
       top: -10px;
@@ -138,12 +144,12 @@ onMounted(async () => {
   .middle-div {
     width: 34px;
   }
-  .center-div {
+  /* .center-div {
     margin-top: 4px;
     margin-bottom:-10;
     padding: 0;
     width: 170px;
-  }
+  } */
   .top-gap {
     margin-top: 12px;
   }
@@ -169,10 +175,10 @@ onMounted(async () => {
   /* .qr-code {
     margin-top: -2px;
   } */
-  /* .middle-font {
+  .middle-font {
     font-size: 5px;
     font-weight: 800;
-  } */
+  }
   /* .small-font {
     font-size: 4px;
     font-weight: 600;
